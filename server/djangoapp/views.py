@@ -2,8 +2,8 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404, render, redirect
-# from .models import related models
-# from .restapis import related methods
+from django.db import models
+from django.utils.timezone import now
 from django.contrib.auth import login, logout, authenticate
 from django.contrib import messages
 from datetime import datetime
@@ -15,10 +15,19 @@ logger = logging.getLogger(__name__)
 
 
 # Create your views here.
+def django_view(request):
+      
+    # render function takes argument  - request
+    # and return HTML as response
+    return render(request, "index.html")
 
 
 # Create an `about` view to render a static about page
-# def about(request):
+def about(request):
+      
+    # render function takes argument  - request
+    # and return HTML as response
+    return render(request, "djangoapp/about.html",{})
 # ...
 
 
